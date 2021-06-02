@@ -43,7 +43,7 @@ void GetLivoxSdkVersion(LivoxSdkVersion *version) {
   }
 }
 
-bool Init() {
+bool Init(uint16_t port_count) {
   if (is_initialized) {
     return false;
   }
@@ -66,6 +66,8 @@ bool Init() {
       result = false;
       break;
     }
+
+    device_discovery().SetPortCount(port_count);
 
     if (device_manager().Init() == false) {
       result = false;

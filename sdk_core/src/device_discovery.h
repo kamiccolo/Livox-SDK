@@ -53,6 +53,7 @@ class DeviceDiscovery : public noncopyable, IOLoop::IOLoopDelegate {
   typedef std::chrono::steady_clock::time_point TimePoint;
 
   DeviceDiscovery() : comm_port_(nullptr) {}
+  void SetPortCount(uint16_t p_count) { port_count = p_count; }
   bool Init();
   void Uninit();
 
