@@ -167,7 +167,6 @@ void DeviceDiscovery::OnBroadcast(const CommPacket &packet,  struct sockaddr *ad
     return;
   }
 
-  ++port_count;
   strncpy(lidar_info.broadcast_code, broadcast_code.c_str(), sizeof(lidar_info.broadcast_code)-1);
   lidar_info.cmd_port = kListenPort + kCmdPortOffset + port_count;
   lidar_info.data_port = kListenPort + kDataPortOffset + port_count;
