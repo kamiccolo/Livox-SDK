@@ -161,6 +161,7 @@ void DeviceDiscovery::OnBroadcast(const CommPacket &packet,  struct sockaddr *ad
 
   if (!found) {
     LOG_INFO("Broadcast code : {} not add to connect", broadcast_code);
+    return;
   }
 
   if (!found || device_manager().IsDeviceConnected(lidar_info.handle)) {
